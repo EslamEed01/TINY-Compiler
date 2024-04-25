@@ -1,8 +1,4 @@
 #include <bits/stdc++.h>
-//#include <stdio.h>
-//#include <stdlib.h>
-//#include <string.h>
-//#include <ctype.h>
 using namespace std;
 typedef long long ll;
 typedef long double ld;
@@ -231,27 +227,6 @@ static void match(TokenType expected)
     std::cerr<<(tiny_out," ");
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 int main()
 {
     TreeNode * syntaxTree;
@@ -272,9 +247,6 @@ int main()
     std::cerr<<"\nSyntax tree:\n";
     printTree(syntaxTree);
   }
-
-
-
 }
 
 TreeNode * stmt_sequence()
@@ -295,7 +267,6 @@ TreeNode * stmt_sequence()
   }
   return t;
 }
-
 TreeNode * statement()
 { TreeNode * t = nullptr;
   switch (token) {
@@ -354,9 +325,6 @@ TreeNode * read_stmt()
   match(ID);
   return t;
 }
-
-
-
 TreeNode * expfun()
 { TreeNode * t = simple_exp();
   if ((token==LT)||(token==EQ)) {
@@ -431,8 +399,6 @@ TreeNode * factor()
     }
   return t;
 }
-
-
 TreeNode * NewExpNode(ExpKind kind)
 {  TreeNode* t = new TreeNode;
   int i;
@@ -458,8 +424,6 @@ TreeNode * parse()
     syntaxError("Code ends before file\n");
   return t;
 }
-
-
 TokenType getToken()
 { 
     int tokenStringIndex = 0;
@@ -590,7 +554,6 @@ TokenType getToken()
     }
     return CurrToken;
 } 
-
 void printToken(TokenType token, const char *tokenString)
 {
     switch (token)
@@ -655,11 +618,6 @@ void printToken(TokenType token, const char *tokenString)
         std::cerr<<(tiny_out, "Unknown token: %d\n", token);
     }
 }
-
-
-
-
-
 TreeNode * newStmtNode(StmtKind kind)
 {  TreeNode* t = new TreeNode;
   int i;
